@@ -18,7 +18,7 @@ body {
     
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    grid-template-rows: repeat(1,1fr);
+    grid-template-rows: repeat(1,auto);
 }
 
 /*Estilos para la parte de la imagen con texto */
@@ -80,6 +80,11 @@ body {
     font-size: 15px;
 }
 
+.alertacontra {
+    width: 90%;
+    color: white;
+}
+
 .pForm > input {
     width: 90%;
 }
@@ -104,21 +109,19 @@ input {
     font-size: 20px;
 }
 
-/* media query para el grid 
-@media screen and (min-width: 1100px){
-    
-    #contenedor {
-        grid-template-areas: "fondo-Texto formRegistro";
+@media screen and (max-width: 1000px) {
+    #contenedor #fondo-Texto {
+        grid-column: 1 / -1;
+    }
+    #contenedor #formRegistro {
+        grid-column: 1 / -1;
     }
 }
-
-@media screen and (max-width: 480px){
-    
-    #contenedor {
-        grid-template-columns: repeat(1,1fr);
-        grid-template-rows: repeat(2,1fr);
-        
-        grid-template-areas: "fondo-Texto"
-                             "formRegistro";
+@media screen and (max-width: 600px) {
+    #contenedor #fondo-Texto {
+        text-align: center;
     }
-}*/
+    #contenedor #formRegistro {
+        text-align: center;
+    }
+}
