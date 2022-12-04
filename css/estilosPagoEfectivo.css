@@ -92,3 +92,23 @@
     margin-top: 15px;
     margin-bottom: 8px;
 }
+
+#tableEfectivo{
+    font-size: 18px;
+    margin-left: 60px;
+    width: 100%;
+}
+
+.tdTable{
+    background-color: lightgray;
+    padding: 10px;
+}
+
+.tdProd{
+    text-align: center;
+
+}
+
+#divTable{
+    width: 85%;
+}
