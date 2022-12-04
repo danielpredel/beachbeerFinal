@@ -1,0 +1,24 @@
+#cuerpo {
+    font-size: 25px;
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 600;
+    margin: 0 auto;
+    background-image: url(../img/playa2.jpg);
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+#formulario {
+    background-image: url(../img/imgFondo.jpg);
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50%;
+    height: 100%;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 20px;
+}

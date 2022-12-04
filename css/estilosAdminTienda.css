@@ -1,0 +1,20 @@
+/* Margen de cada pagina de la administracion de la base de datos*/
+.contenedorPrincipal {
+    margin: 100px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    min-height: 500px;
+}
+
+/* Efecto hover en las imagenes de los productos */
+.inner {
+    overflow: hidden;
+}
+
+.inner img {
+    transition: all 1.5s ease;
+}
+
+.inner:hover img {
+    transform: scale(1.2);
+}

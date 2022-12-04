@@ -1,0 +1,124 @@
+/*Estilos para el cuerpo */
+body {
+    background-image: url("../img/imgFondo.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    height: 600px;
+}
+
+/* Estilos del contenedor de la imagen con texto y formulario*/
+#contenedor {
+    
+    margin-left: 80px;
+    margin-right: 80px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    /*margin-top: 115px;*/
+    
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(1,1fr);
+}
+
+/*Estilos para la parte de la imagen con texto */
+#fondo-Texto {
+    
+    background-image: url("../img/imgFondo.jpg");
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;   
+}
+
+/* Estilos para el texto de la imagen */
+#texto {
+    
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    align-content: center;
+}
+
+#msj {
+    margin-top: 125px;
+    font-size: 35px;
+}
+
+.txt{
+    font-size: 20px;
+    color: black;
+}
+
+#btnImg {
+   font-size: 20px;
+   background-color: transparent;
+   padding: 12px;     
+}
+
+/*Estilos para el formulario */
+.form {
+    background-color: white;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-left: 30px;
+}
+
+#ren1, #ren2 {
+    display: flex;
+    width: 95%;
+}
+
+#contra, #apell {
+    margin-left: 50px;
+}
+
+.pForm {
+    color: gray;
+    width: 100%;
+    line-height: 2.5;
+    font-size: 15px;
+}
+
+.pForm > input {
+    width: 90%;
+}
+
+input {
+   font-size: 20px;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+#btnForm {
+    width: 92%;
+    font-size: 20px;
+    margin-top: 18px;
+    padding: 15px;
+    background-color: skyblue;
+    border-color: transparent;
+}
+
+#error {
+    color: red;
+    font-size: 20px;
+}
+
+/* media query para el grid 
+@media screen and (min-width: 1100px){
+    
+    #contenedor {
+        grid-template-areas: "fondo-Texto formRegistro";
+    }
+}
+
+@media screen and (max-width: 480px){
+    
+    #contenedor {
+        grid-template-columns: repeat(1,1fr);
+        grid-template-rows: repeat(2,1fr);
+        
+        grid-template-areas: "fondo-Texto"
+                             "formRegistro";
+    }
+}*/

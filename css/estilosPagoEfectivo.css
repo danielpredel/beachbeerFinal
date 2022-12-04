@@ -1,0 +1,94 @@
+#bdEfectivo{
+    background-image: url("../img/playa2.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    position: relative;
+}
+
+#contenedor{
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 40px;
+    margin-bottom: 70px;
+    padding-top:10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    background-color: white;
+}
+
+#titleEfectivo{
+    background-color: lightgray;
+    margin-left: 25px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+#titleEfectivo > h2{
+    line-height: 1.5;
+    padding: 10px;
+    margin-right: 10px;
+    font-size: 23px;
+}
+
+.p{
+    margin-left: 30px;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.liEfectivo{
+    font-size: 20px;
+}
+
+.ulEfectivo{
+    margin-top: 35px;
+    margin-left:10px;
+}
+
+.pcampo{
+    line-height: 0;
+    margin-left: 60px;
+    font-size: 20px;
+}
+
+.imgEfectivo{
+    width: 90px;
+    height: 70px;
+    border-radius: 5px;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+
+#divimg{
+    width: 15%;
+    margin: 0 auto;
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+
+#btnCancel{
+    background-color: black;
+    color: white;
+}
+
+#btnAceptar{
+    background-color: skyblue;
+}
+
+#btn{
+    width: 100%;
+    text-align: end;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+#btnAceptar, #btnCancel{
+    width: 200px;
+    padding: 5px;
+    font-size: 20px;
+    border: none;
+    margin-top: 15px;
+    margin-bottom: 8px;
+}
