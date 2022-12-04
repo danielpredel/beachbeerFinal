@@ -75,17 +75,53 @@
                <li class="liEfectivo">Monto a pagar</li>
                
            </ul>
+
            <p class="pcampo">
-               <i>$ </i>
+               <i>$ <?php echo $_SESSION['total'] ?></i>
            </p>
            
            <ul class="ulEfectivo">
-               <li class="liEfectivo">Compraste</li>
-               
-           </ul>
-           <p class="pcampo">
-               <i>Productos</i>
-           </p>
+               <li class="liEfectivo">Comprarás</li>
+            </ul>
+            
+            <?php 
+                // Conectarse a la BD
+                $servidor='localhost';
+                $cuenta='root';
+                $password='';
+                $bd='beachbeer';
+                $conexion = new mysqli($servidor,$cuenta,$password,$bd);
+
+                echo '<div id="divTable"><table id="tableEfectivo">
+                        <tr>
+                            <td class="tdTable">Producto</td>
+                            <td class="tdTable">Nombre</td>
+                            <td class="tdTable">Unidades</td>
+                            <td class="tdTable">Total</td>
+                        </tr>';
+                
+                foreach($_SESSION['carrito'] as $idProducto => $unidades) {
+                    $sql = "SELECT nombre, categoria, precio, imagen FROM productos WHERE idProducto = $idProducto";
+                    $resultado = $conexion->query($sql);//realizamos la consulta
+
+                    if ($resultado -> num_rows){ //si la consulta genera registros
+                        
+                        $fila = $resultado -> fetch_assoc();
+                        $nombre = $fila['nombre'];
+                        $categoria = $fila['categoria'];
+                        $precio = $fila['precio'];
+                        $imagen = $fila['imagen'];
+
+                        echo '<tr>
+                                <td><img src="img/productos/'.$imagen .'" class="imgEfectivo""></td>
+                                <td>'.$categoria.' '.$nombre.'</td>
+                                <td class="tdProd">'.$unidades.'</td>
+                                <td class="tdProd">$ '.$precio*$unidades.'</td>
+                              </tr>';
+                    }
+                }
+                        echo '</table></div>';
+            ?>  
            
            <input type="hidden" name="opcionPago" value="<?php echo $opcion ?>">
            <input type="hidden" name="pay" value="<?php echo $pay ?>">

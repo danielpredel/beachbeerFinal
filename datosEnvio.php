@@ -22,7 +22,7 @@
        <div id="campos">
            
            <form id="formEnvio" action="opcionesPago.php" method="post">
-               
+
                <label for="nombre">Nombre Completo</label><br>
                <input class="inEnvio" required type="text" name="nombre" id="nombre">
                
