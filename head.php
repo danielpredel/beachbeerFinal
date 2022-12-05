@@ -64,6 +64,7 @@
                         foreach($_SESSION['carrito'] as $idProducto => $unidades) {
                             $total += $unidades;
                         }
+                        $_SESSION['noProductos'] = $total;
                         echo $total;
                     }
                     else {
