@@ -84,13 +84,17 @@
        <div class="p" style="display:flex;">
            
             <div style="width:50%;">
-               <p>Productos (#Número)</p>
+               <p>Productos (<?php echo $_SESSION['noProductos'] ?>)</p>
                <p>Envío</p>
-               <p>Impuestos</p>
+               <p>Impuestos: IVA del 5%</p>
                <p>
                    <?php 
-                        if(isset($_SESSION['cupon'])){
-                            echo "Descuento Cupón <b>".$_SESSION['cupon']."</b>";
+                        if(isset($_SESSION['cupon']) && $_SESSION['cupon'] != "e"){
+                            if($_SESSION['cupon'] = "CUPONSUSCRIPTORES"){
+                                echo "<b>".$_SESSION['cupon']."</b>";
+                            }else{
+                                echo "Descuento Cupón <b>".$_SESSION['cupon']."</b>";
+                            }
                         }
                    ?>    
                </p>
@@ -98,7 +102,8 @@
             </div>
             <div class="right">
                <!-- Precio total de los productos -->
-               <p>$ </p>
+               <p>$ <?php echo $_SESSION['subtotal'] ?></p>
+
                <p> <?php 
                        if($_SESSION['envio']== 0.0){
                            echo "<p>Gratis</p>";
@@ -109,10 +114,10 @@
                    ?> 
                </p>
                <!--Impuestos -->
-               <p>$ </p>
+               <p>$ <?php echo $_SESSION['iva'] ?> </p>
                <p>
                   <?php 
-                        if(isset($_SESSION['cupon'])){
+                        if(isset($_SESSION['cupon']) && $_SESSION['cupon'] != "e"){
                             if($_SESSION['cupon'] == "FELIZNAVIDAD"){
                                 echo  "15% de descuento";
                                 
@@ -138,7 +143,7 @@
                <p><b>Total</b></p>
             </div>
             <div class="right">
-               <p>$ </p>
+               <p>$ <?php echo $_SESSION['total'] ?></p>
                <?php
                     if($pay == "c"){
                         echo '<p id="small">Crédito en '.$opcion.'</p>';
@@ -237,9 +242,48 @@
       </div>
        
        
-       <div class="title">
+       <div class="prod">
             <h2>Productos</h2>
        </div>
+
+       <?php 
+            // Conectarse a la base de datos
+            $servidor='localhost';
+            $cuenta='root';
+            $password='';
+            $bd='beachbeer';
+            $conexion = new mysqli($servidor,$cuenta,$password,$bd);
+
+            echo '<div id="divTable"><table id="tableCompra">
+                    <tr>
+                        <td class="tdTable">Producto</td>
+                        <td class="tdTable">Nombre</td>
+                        <td class="tdTable">Unidades</td>
+                        <td class="tdTable">Total</td>
+                    </tr>';
+            
+            foreach($_SESSION['carrito'] as $idProducto => $unidades) {
+                $sql = "SELECT nombre, categoria, precio, imagen FROM productos WHERE idProducto = $idProducto";
+                $resultado = $conexion->query($sql);//realizamos la consulta
+
+                if ($resultado -> num_rows){ //si la consulta genera registros
+                    
+                    $fila = $resultado -> fetch_assoc();
+                    $nombre = $fila['nombre'];
+                    $categoria = $fila['categoria'];
+                    $precio = $fila['precio'];
+                    $imagen = $fila['imagen'];
+
+                    echo '<tr>
+                            <td><img src="img/productos/'.$imagen .'" class="imgCompra""></td>
+                            <td>'.$categoria.' '.$nombre.'</td>
+                            <td class="tdProd">'.$unidades.'</td>
+                            <td class="tdProd">$ '.$precio*$unidades.'</td>
+                            </tr>';
+                }
+            }
+                    echo '</table></div>';
+        ?>
        
        <div id="btn"><a href="tienda.php"><button type="button" id="btnAceptar">Volver a la Tienda</button></a></div>
     </div>
@@ -247,20 +291,19 @@
 <!--
     <script>
             swal({
-              title: "¡Correo Enviado!",
-              text: "Hemos Enviado los Detalles de la Compra a su Correo",
-              type: "success",
-              timer: 6000,
-              showConfirmButton: false
-            });
+                title: "¡Correo Enviado!",
+                text: "Hemos Enviado los Detalles de la Compra a su Correo",
+                icon: "success",
+                }).then(() => {});
     </script>
--->
-    
+    -->
     
     <?php
       //include "correoDetalles.php";
     
       include "footer.php";
+
+      $_SESSION['cupon'] = "e";
    ?>
 </body>
 </html>

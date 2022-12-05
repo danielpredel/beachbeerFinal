@@ -37,6 +37,25 @@
         
             return $gasto;
         }
+
+        //Funcion que calcula el total de la compra
+        function calcula_total($sub,$envio,$iva){
+            $total = $sub+$envio+$iva;
+            return $total;
+        }
+
+        //Funcion que aplicara el descuento en total a pagar
+        function aplica_descuento($total,$descuento){
+            $descuento/=100;
+            $resta = $descuento*$total;
+            $total-=$resta;
+            return $total;
+        }
+
+        function calcula_iva($total){
+            $iva = $total*0.05;
+            return $iva;
+        }
        
     
         // Recuperar todos los datos de envio
@@ -52,6 +71,8 @@
             $_SESSION['telefono'] = $_POST['telefono'];
             $_SESSION['backup'] = "ready";
         }
+
+        $subtotal = $_SESSION['subtotal'];
     
    ?>
    
@@ -68,13 +89,13 @@
                     // Correo Electronico
                     echo "<i style='margin-bottom:30px;' class='i fas fa-user-tie'></i>".$_SESSION['email'];
                 ?>
-                <p>Productos (#N)</p>
+                <p>Productos (<?php echo $_SESSION['noProductos'] ?>)</p>
                 <p>Envío</p>
-                <p>Impuestos</p>
+                <p>Impuestos: IVA del 5%</p>
                 <p>Total</p>
                 
                    <?php
-                    if(isset($_SESSION['cupon'])){
+                    if(isset($_SESSION['cupon']) && $_SESSION['cupon'] != "e"){
                         
                         if($_SESSION['cupon'] == "FELIZNAVIDAD"){
                             echo "<p>Cupón <b>FELIZNAVIDAD</b></p>";
@@ -96,8 +117,13 @@
             <div class="right">
                <?php
                 
-                    if(isset($_SESSION['cupon'])){
-                        echo "<div id='cup'>Cupón aplicado: ".$_SESSION['cupon']."</div>";
+                    if(isset($_SESSION['cupon']) && $_SESSION['cupon'] != "e"){
+                        if($_SESSION['cupon'] == "CUPONSUSCRIPTORES"){
+                            echo "<div id='cup'>Cupón: CUPONSUSCRIPTORES</div>";
+                        }else if($_SESSION['cupon'] == "FELIZNAVIDAD" || $_SESSION['cupon'] == "BEACHBEER2023"){
+                            echo "<div id='cup'>Cupón aplicado: ".$_SESSION['cupon']."</div>";
+                        }
+                        
                         
                     }else{ ?>
                        <form action="validaCupon.php" method="post">
@@ -107,35 +133,48 @@
                     <?php
                     }
                 
-                        echo "<p>$ </p>";
+                        echo "<p>$ ".$subtotal."</p>";
                 
                         $gasto = gasto_envio($_SESSION['pais']);
+
                         $_SESSION['envio'] = $gasto;
+
                         if($gasto == 0.0){
                            echo "<p>Gratis</p>";
 
                         }else{
                            echo "<p>$ ".$gasto."</p>";    
                         }
+
+                        $total = calcula_total($subtotal,$gasto,0);
+                        $iva = calcula_iva($total);
+                        $total = calcula_total($subtotal,$gasto,$iva);
+
+                        echo "<p>$ ".$iva."</p>";
                 
-                        echo "<p>$</p>";
+                        echo "<p>$ ".$total."</p>";
                 
-                        echo "<p>$</p>";
-                
-                        if(isset($_SESSION['cupon'])){
-                            
+                        if(isset($_SESSION['cupon']) && $_SESSION['cupon'] != "e"){
+
                             if($_SESSION['cupon'] == "FELIZNAVIDAD"){
                                 echo  "<p><b>15% de descuento</b></p>";
+                                $total = aplica_descuento($total,15);
+                                echo "<p><b>$ ".$total."<b></p>";
                                 
                             }else if($_SESSION['cupon'] == "CUPONSUSCRIPTORES"){
                                 echo  "<p><b>20% de descuento</b></p>";
+                                $total = aplica_descuento($total,20);
+                                echo "<p><b>$ ".$total."<b></p>";
                                 
                             }else if($_SESSION['cupon'] == "BEACHBEER2023"){
                                 echo  "<p><b>10% de descuento</b></p>";
+                                $total = aplica_descuento($total,10);
+                                echo "<p><b>$ ".$total."<b></p>";
                             }
-                            
-                            echo "<p><b>$<b></p>";
                         }
+
+                        $_SESSION['total'] = $total;
+                        $_SESSION['iva'] = $iva;
                         
                     ?>
             </div>
