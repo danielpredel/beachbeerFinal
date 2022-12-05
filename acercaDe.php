@@ -28,6 +28,26 @@
             <p class="text3J">Beach Beer es la empresa líder en México en la elaboración, distribución y venta de cervezas y licores. Mantenemos un firme compromiso con el fomento de un mundo mejor a través del consumo responsable, iniciativas ambientales y apoyo a las comunidades en que vivimos y trabajamos. Nos distingue como empresa, cumplir nuestras responsabilidades con los consumidores, clientes, accionistas y empleados a través de la dirección, liderazgo e innovación.</p>
         </div>
     </div>
+    <div class="Contenedor22">
+        <p class="titulo22">Misión, visión y objetivo</p>
+        <div class="contenedor1JJ">
+           <br>
+           <br>
+           <br>
+           <br>
+           <br>
+            <img class="image11" src="img/Fondo2.png" alt="">
+        </div>
+        <div class="contenedor2JJ">
+            <div class="text3J">
+               <br>
+               <br>
+                <p>Nuestra<strong> misión </strong>como compañía es mejorar el ambiente en cualquier ámbito comunitario. Es necesario hacer mas ameno y mas gratificante el entorno social. Además poder compartir experiencias con cualquier persona que conozcas o puedas conocer a través de nuestros productos, también es parte de nuestro objetivo</p>
+                <p>Nuestra <strong>visión</strong> (igualmente como compañía) es poder crecer a un corto plazo como una de las más grandes compañías de venta de alcohol de cualquier tipo... ¿Y por qué no? a un largo plazo, ser de las corporaciones esenciales de traspasos de productos con alcohol a nivel mundial </p>
+                <p>Nuestro <strong>objetivo</strong> como organización es principalmente, poder crear y regalar experiencias a una y cada persona que necesite nuestros productos o simplemente quiera degustar de alguna bebida que le podamos proporcionar con todo el gusto del mundo.</p>
+            </div>
+        </div>
+    </div>
     <div>
         <p class="titulo2">Nuestro equipo</p>
     </div>
@@ -52,7 +72,7 @@
             <p class="titu">El todas mías</p>
             </div>
             <div class="image2">
-            <img class="imagg" src="img/Julian_edited.jpg" alt="">
+            <img class="imaggJulian" src="img/Julian_edited.jpg" alt="">
             <p class="tit">Julián Carreón</p>
             <p class="titu">El mandilón</p>
             </div>
