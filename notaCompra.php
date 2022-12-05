@@ -247,7 +247,7 @@
        </div>
 
        <?php 
-            // Conectarse a la BD
+            // Conectarse a la base de datos
             $servidor='localhost';
             $cuenta='root';
             $password='';
