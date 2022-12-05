@@ -27,9 +27,27 @@ body{
     height: 700px;
     float: left;
     background-color: white;
+    text-align: center;    
+}
+
+.contenedor1JJ {
+    width: 50%;
+    height: 700px;
+    float: left;
     text-align: center;
     
-    
+    font-size: 20px;
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 600;
+}
+
+.contenedor2JJ {
+    width: 50%;
+    height: 700px;
+    float: right;
+    background-color: white;
+    text-align: center;    
 }
 
 .image11 {
@@ -69,11 +87,26 @@ body{
     font-style: normal;
 }
 
+.titulo22{
+    font-size: 100px;
+    text-align: center;
+    background-color: black;
+    color: white;
+    font-family: 'Rubik';
+    font-style: normal;
+}
+
 .imagg{
     width: 50%;
     height: 50%;
    border:1px solid black;
     
+}
+
+.imaggJulian{
+    width: 38%;
+    height: 50%;
+   border:1px solid black;
 }
 
 .image1 {
