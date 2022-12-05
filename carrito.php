@@ -66,7 +66,8 @@
                     echo '<div class="col-md-9"></div>';
                     echo '<div class="col-md-1">Subtotal</div>';
                     echo '<div class="col-md-1">$<span id="subtotal">'. $subtotal .'</span></div>';
-                    echo '<div class="col-md-1"><form action="datosEnvio.php" method="post"><input type="hidden" value="' .$subtotal .'" name="subtotal"><button type="submit" class="btn btn-success">Finalizar</button></form></div>';
+                    $_SESSION['subtotal'] = $subtotal;
+                    echo '<div class="col-md-1"><form action="datosEnvio.php" method="post"><button type="submit" class="btn btn-success">Finalizar</button></form></div>';
                     echo '</div>';
                     echo '</div>';
                 }
