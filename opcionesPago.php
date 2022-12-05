@@ -49,6 +49,7 @@
             $descuento/=100;
             $resta = $descuento*$total;
             $total-=$resta;
+            $_SESSION['descuento'] = $resta;
             return $total;
         }
 
@@ -95,7 +96,7 @@
                 <p>Total</p>
                 
                    <?php
-                    if(isset($_SESSION['cupon']) && $_SESSION['cupon'] != "e"){
+                    if(isset($_SESSION['cupon'])){
                         
                         if($_SESSION['cupon'] == "FELIZNAVIDAD"){
                             echo "<p>Cupón <b>FELIZNAVIDAD</b></p>";
@@ -117,7 +118,7 @@
             <div class="right">
                <?php
                 
-                    if(isset($_SESSION['cupon']) && $_SESSION['cupon'] != "e"){
+                    if(isset($_SESSION['cupon'])){
                         if($_SESSION['cupon'] == "CUPONSUSCRIPTORES"){
                             echo "<div id='cup'>Cupón: CUPONSUSCRIPTORES</div>";
                         }else if($_SESSION['cupon'] == "FELIZNAVIDAD" || $_SESSION['cupon'] == "BEACHBEER2023"){
@@ -154,21 +155,21 @@
                 
                         echo "<p>$ ".$total."</p>";
                 
-                        if(isset($_SESSION['cupon']) && $_SESSION['cupon'] != "e"){
+                        if(isset($_SESSION['cupon'])){
 
                             if($_SESSION['cupon'] == "FELIZNAVIDAD"){
-                                echo  "<p><b>15% de descuento</b></p>";
                                 $total = aplica_descuento($total,15);
+                                echo  "<p><b>15% de descuento = $ ".$_SESSION['descuento']."</b></p>";
                                 echo "<p><b>$ ".$total."<b></p>";
                                 
                             }else if($_SESSION['cupon'] == "CUPONSUSCRIPTORES"){
-                                echo  "<p><b>20% de descuento</b></p>";
                                 $total = aplica_descuento($total,20);
+                                echo  "<p><b>20% de descuento = $ ".$_SESSION['descuento']."</b></p>";
                                 echo "<p><b>$ ".$total."<b></p>";
                                 
                             }else if($_SESSION['cupon'] == "BEACHBEER2023"){
-                                echo  "<p><b>10% de descuento</b></p>";
                                 $total = aplica_descuento($total,10);
+                                echo  "<p><b>10% de descuento = $ ".$_SESSION['descuento']."</b></p>";
                                 echo "<p><b>$ ".$total."<b></p>";
                             }
                         }

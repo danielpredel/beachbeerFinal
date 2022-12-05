@@ -89,7 +89,7 @@
                <p>Impuestos: IVA del 5%</p>
                <p>
                    <?php 
-                        if(isset($_SESSION['cupon']) && $_SESSION['cupon'] != "e"){
+                        if(isset($_SESSION['cupon'])){
                             if($_SESSION['cupon'] = "CUPONSUSCRIPTORES"){
                                 echo "<b>".$_SESSION['cupon']."</b>";
                             }else{
@@ -117,15 +117,15 @@
                <p>$ <?php echo $_SESSION['iva'] ?> </p>
                <p>
                   <?php 
-                        if(isset($_SESSION['cupon']) && $_SESSION['cupon'] != "e"){
+                        if(isset($_SESSION['cupon'])){
                             if($_SESSION['cupon'] == "FELIZNAVIDAD"){
-                                echo  "15% de descuento";
+                                echo  "15% de descuento = $ ".$_SESSION['descuento'];
                                 
                             }else if($_SESSION['cupon'] == "CUPONSUSCRIPTORES"){
-                                echo  "20% de descuento";
+                                echo  "20% de descuento = $ ".$_SESSION['descuento'] ;
                                 
                             }else if($_SESSION['cupon'] == "BEACHBEER2023"){
-                                echo  "10% de descuento";
+                                echo  "10% de descuento = $ ".$_SESSION['descuento'] ;
                             }
                         }
                    ?> 
@@ -263,16 +263,18 @@
                     </tr>';
             
             foreach($_SESSION['carrito'] as $idProducto => $unidades) {
-                $sql = "SELECT nombre, categoria, precio, imagen FROM productos WHERE idProducto = $idProducto";
+                $sql = "SELECT idProducto, nombre, categoria, existencia, precio, imagen FROM productos WHERE idProducto = $idProducto";
                 $resultado = $conexion->query($sql);//realizamos la consulta
 
                 if ($resultado -> num_rows){ //si la consulta genera registros
                     
                     $fila = $resultado -> fetch_assoc();
+                    $id = $fila['idProducto'];
                     $nombre = $fila['nombre'];
                     $categoria = $fila['categoria'];
                     $precio = $fila['precio'];
                     $imagen = $fila['imagen'];
+                    $existencia = $fila['existencia'];
 
                     echo '<tr>
                             <td><img src="img/productos/'.$imagen .'" class="imgCompra""></td>
@@ -280,6 +282,25 @@
                             <td class="tdProd">'.$unidades.'</td>
                             <td class="tdProd">$ '.$precio*$unidades.'</td>
                             </tr>';
+                      
+                    // Actualizar la tabla de Productos
+                    $actualiza = "UPDATE productos SET existencia=".($existencia-$unidades)." WHERE idProducto=".$id;        
+                    $conexion->query($actualiza);
+
+
+                    // Actualizar la tabla de ventas
+                    $existe = "SELECT * FROM ventas WHERE Producto LIKE BINARY '$nombre'"; // Validar si ya existen ventas del producto 
+                    $res = $conexion->query($existe);
+                    if($res->num_rows){ // Si ya hay ventas de este producto
+                        $row =$res->fetch_assoc();
+                        $piezas = $row['PiezasVendidas'];
+                        $actualiza = "UPDATE ventas SET PiezasVendidas=".($piezas+$unidades)." WHERE Producto='$nombre'";
+                        $conexion->query($actualiza);
+
+                    }else{ // Si es la primer venta
+                        $actualiza = "INSERT INTO ventas VALUES ('$nombre',$unidades)";
+                        $conexion->query($actualiza);
+                    }
                 }
             }
                     echo '</table></div>';
@@ -288,7 +309,7 @@
        <div id="btn"><a href="tienda.php"><button type="button" id="btnAceptar">Volver a la Tienda</button></a></div>
     </div>
     
-<!--
+    <!--
     <script>
             swal({
                 title: "¡Correo Enviado!",
@@ -299,11 +320,13 @@
     -->
     
     <?php
-      //include "correoDetalles.php";
-    
+      
+      include "correoDetalles.php";
       include "footer.php";
 
-      $_SESSION['cupon'] = "e";
+      $_SESSION['cupon'] = null;
+      $_SESSION['carrito'] = null;
+      $_SESSION['descuento'] = null;
    ?>
 </body>
 </html>
