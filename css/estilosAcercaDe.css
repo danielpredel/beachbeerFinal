@@ -1,0 +1,175 @@
+body{
+    font-size: 20px;
+    font-family: 'Rubik';
+    font-style: normal;
+    background-image: url("../img/playa2.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    position: relative;
+}
+
+.contenedor1J {
+    width: 50%;
+    height: 700px;
+    float: right;
+    background-color: black;
+    text-align: center;
+    
+    font-size: 20px;
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 600;
+}
+
+.contenedor2J {
+    width: 50%;
+    height: 700px;
+    float: left;
+    background-color: white;
+    text-align: center;
+    
+    
+}
+
+.image11 {
+    width: 95%;
+    
+}
+
+.text1J{
+    color: #03553E;
+    font-size: 40px;
+    height: 10px;
+    background-color: white;
+}
+
+.text2J {
+    font-weight: 800;
+    font-size: 120px;
+    line-height: 5px;
+    color: #03553E;
+    height: 30px;
+}
+
+.text3J {
+    font-size: 20px;
+    margin-left: 95px;
+    margin-right: 95px;
+    justify-content: space-around;
+    font-weight: 500;
+}
+
+.titulo2{
+    font-size: 100px;
+    text-align: center;
+    background-color: #03553E;
+    color: white;
+    font-family: 'Rubik';
+    font-style: normal;
+}
+
+.imagg{
+    width: 50%;
+    height: 50%;
+   border:1px solid black;
+    
+}
+
+.image1 {
+	width:49.5%;
+    height: 10%;
+    float: left;
+	height:49.5%;
+	overflow:hidden;
+     text-align: center;
+}
+
+.image2 {
+	width:49.5%;
+    height: 100%;
+    float: right;
+	height:49.5%;
+	overflow:hidden;
+     text-align: center;
+}
+
+.tit {
+    font-size: 25px;
+    font-weight: 600;
+    background-color: white;
+    margin-left: 20%;
+    margin-right: 20%;
+    color: black;
+}
+
+.titu{
+    color: white;
+    background-color: black;
+    margin-left: 20%;
+    margin-right: 20%;
+    text-align: center;
+}
+
+.tituu{
+    color: black;
+    font-size: 45px;
+    margin-left: 20%;
+    margin-right: 20%;
+    text-align: center;
+}
+
+/*Algunos estilos del index*/
+
+.segundo {
+    text-align: center;
+    background-color: white;
+    color: #03553E;
+}
+
+.botonJ {
+    text-decoration-line: none;
+    background-color: white;
+}
+
+.mismo1{
+    font-size: 20px;
+}
+
+.mismo2{
+    font-size: 90px;
+    line-height: 100px;
+}
+
+.comprara{
+    display: flex;
+    justify-content: space-around;
+    color: white;
+}
+
+.comprara1{
+    text-align: center;
+    background-color: #03553E;
+    width: 49.5%;
+}
+
+.comprara2{
+    text-align: center;
+    background-color: #03553E;
+    width: 49.5%;
+}
+
+.textoJ{
+    font-size: 75px;
+}
+
+.frasemamadora{
+    color: #03553E;
+    text-align: center;
+    background-color: white;
+    font-size: 75px;
+}
+
+.videoJ{
+    text-align: center;
+}

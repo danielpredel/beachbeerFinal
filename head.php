@@ -40,7 +40,7 @@
                             <a class="nav-link" href="tienda.php" id="headestiloscolor">TIENDA</a>
                         </li>
                         <li class="nav-item active link">
-                            <a class="nav-link" href="acercade.php" id="headestiloscolor">ACERCA DE</a>
+                            <a class="nav-link" href="acercaDe.php" id="headestiloscolor">ACERCA DE</a>
                         </li>
                         <li class="nav-item active link">
                             <a class="nav-link" href="contactanos.php" id="headestiloscolor">CONTACTANOS</a>
