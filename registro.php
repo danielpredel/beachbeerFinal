@@ -39,9 +39,9 @@
                 
                 <div id="ren1">
                     
-                    <p class="pForm">Nombre<br><input type="text" name="nombre" required></p>
+                    <p class="pForm">Nombre(s)<br><input type="text" name="nombre" required></p>
                     
-                    <p class="pForm" id="apell">Apellido<br><input type="text" name="apellido" required></p>
+                    <p class="pForm" id="apell">Apellido(s)<br><input type="text" name="apellido" required></p>
                 </div>
                 
                 <p class="pForm">Correo Electrónico<br>
@@ -57,7 +57,7 @@
             
                 </div>
                 
-                <p class="pForm" id="error"></p>
+                <div class="alert alert-danger" role="alert" id="error" ></div>
                 
                 <p><button type="submit" id="btnForm">Registrarse</button></p>
                 

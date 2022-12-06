@@ -80,6 +80,10 @@ body {
     font-size: 15px;
 }
 
+#error {
+    width: 90%;
+}
+
 .alertacontra {
     width: 90%;
     color: white;
