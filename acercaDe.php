@@ -1,3 +1,6 @@
+<?php
+    include "head.php";
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -8,9 +11,7 @@
 
     <link rel="stylesheet" href="css/estilosAcercaDe.css">
 </head>
-<?php
-    include "head.php";
-?>
+
 <body>
     <div class="Contenedor22">
         <div class="contenedor1J">
