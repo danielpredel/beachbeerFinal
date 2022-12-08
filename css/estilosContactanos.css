@@ -1,0 +1,67 @@
+.titulo{
+    color: #03553E;
+    font-size: 60px;
+    text-align: center;
+}
+
+.titulo {
+    text-align: center;
+    color: white;
+}
+.mensaj {
+    text-align: center;
+    color: black;
+}
+
+.contenedor .form .form-header .form-title {
+    font-weight: bold;
+    font-family: 'Rubik';
+}
+
+.contenedor .form{
+    background: rgba(0,0,0,.6);
+    width: 100%;
+    max-width: 700px;
+    margin-left:  50%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 30px 35px;
+}
+
+.contenedor .form .form-label {
+    display: block;
+    color: #1ac293;
+    font-size: 20px;
+    font-family: 'Rubik';
+    position: relative;
+}
+
+.contenedor .form .form-input, .form-textarea {
+    background: rgba(0,0,0,.7);
+    border: none;
+    outline: none;
+    color: #03553E;
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 2px;
+    font-size: 14px;
+    color: #fff;
+    font-family: 'Rubik';
+}
+
+.contenedor .form .btn-submit{
+    width: 100%;
+    font-family: 'Rubik';
+    font-weight: bold;
+    outline: none;
+    color: #03553E;
+    font-size: 16px;
+    border: none;
+    color: #03553E;
+    padding: 15px 0;
+    cursor: pointer;
+}
+.contenedor .form .btn-submit:hover {
+    background:  #047e5c;
+}

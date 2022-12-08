@@ -88,6 +88,27 @@ function enviarCorreo() {
     envio.send(cadena);
 }
 
+function enviarCorreoContacto() {
+    var correo = document.getElementById('correo').value;
+    cadena = "email=" + correo;
+    var envio = new XMLHttpRequest();        
+    envio.open('POST','enviarContacto.php', true);
+    envio.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    envio.onload = function(){
+        var resp = envio.responseText;
+        if(resp == "exito") {
+            swal("Correo enviado", "", "success");
+        }
+        else {
+            swal("Error al enviar el correo", "", "error");
+        }
+    }
+    envio.send(cadena);
+}
+
+
+
+
 function validarLogin() {
     var username = document.getElementById('username').value;
     var password = document.getElementById('password').value;
