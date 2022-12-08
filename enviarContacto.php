@@ -38,7 +38,7 @@
         $asunto = $_POST['asunto'];
         $detalle = $_POST['det'];
 
-        $mail->Body= 'De: '.$correoelectronic.'Nombre: '.$nombre.'Apellido: '.$apellido.'Asunto: '.$asunto.'Aclaracion: '.$detalle;
+        $mail->Body= 'De: '.$correoelectronic.'<br>Nombre: '.$nombre.'<br>Apellido: '.$apellido.'<br>Asunto: '.$asunto.'<br>Aclaracion: '.$detalle;
         $mail->send();
         echo "exito";
 
