@@ -1,0 +1,22 @@
+.titulos{
+    font-size: 20px;
+    text-align: center;
+}
+
+body{
+    background-image: url(images/playa2.jpg);
+    background-size: 100%;
+}
+
+.heading{
+    text-align: center;
+    font-size: 30px;
+}
+
+.panel panel-primary{
+    text-align: center;
+}
+
+.centrar{
+    text-align: center;
+}

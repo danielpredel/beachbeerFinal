@@ -91,10 +91,14 @@
                                     $btn .= '<a class="dropdown-item" href="agregarProductos.php">Agregar Productos</a>
                                         <a class="dropdown-item" href="eliminarProductos.php">Eliminar Productos</a>
                                         <a class="dropdown-item" href="editarProductos.php">Editar Productos</a>';
+                                    $btn2 = '<a href="graficas.php"><button class="btn btn-secondary" type="button" aria-expanded="false">Graficas</button></a>';
+                                    
                                 }
                         $btn .= '</div>
                             </div>';
                         echo $btn;
+                        if(isset($_SESSION['ADMIN']))
+                        echo $btn2;
                     }
                 ?>
                 </div>
