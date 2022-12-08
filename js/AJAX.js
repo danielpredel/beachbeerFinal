@@ -90,13 +90,18 @@ function enviarCorreo() {
 
 function enviarCorreoContacto() {
     var correo = document.getElementById('correo').value;
-    cadena = "email=" + correo;
+    nombre = document.getElementById('nom').value;
+    apellido = document.getElementById('nom2').value;
+    correo = document.getElementById('correo').value;
+    asunto = document.getElementById('asunto').value;
+    detalle = document.getElementById('detalle').value;
+    cadena = "correo=" + correo + "&nombre=" + nombre + "&apellido=" + apellido + "&asunto=" + asunto + "&det=" + detalle;
     var envio = new XMLHttpRequest();        
     envio.open('POST','enviarContacto.php', true);
     envio.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     envio.onload = function(){
         var resp = envio.responseText;
-        if(resp == "exito") {
+        if(resp == "exitoexito") {
             swal("Correo enviado", "", "success");
         }
         else {
@@ -105,9 +110,6 @@ function enviarCorreoContacto() {
     }
     envio.send(cadena);
 }
-
-
-
 
 function validarLogin() {
     var username = document.getElementById('username').value;

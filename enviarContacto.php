@@ -72,7 +72,7 @@
         $email->Subject= 'Correo PHP';
         //Lo que va a decir el correo
         $nom=$_POST['nombre'];
-        $email->Body= 'Hola'.$nom.'su solicitud está siendo procesada';
+        $email->Body= 'Hola '.$nom.' tu solicitud está siendo procesada';
         $email->send();
         echo "exito";
 
