@@ -63,7 +63,7 @@
                     <a href="#">
                         <p class="envio">Envío y devoluciones </p>
                     </a>
-                    <a href="#">
+                    <a href="ayuda.php">
                         <p class="pregunta">Preguntas frecuentes</p>
                     </a>
                     <a href="#">
