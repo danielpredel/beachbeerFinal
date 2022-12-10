@@ -14,7 +14,7 @@
 <body>
     <div id="justificado">
         <h2 class="titulo">Contacto</h2>
-        <h4 class="mensaj">Si tienes alguna duda o comentario dejándolo saber estaremos contactándote para ayudarte </h4>
+        <h4 class="mensaj">Si tienes alguna duda o comentario mandalo,  estaremos enviandote un correo para ayudarte!</h4>
             <div class="contenedor">
                     <div class="form">   
                         <label for="Nombre1" class="form-label">Nombre:</label>
