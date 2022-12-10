@@ -20,7 +20,6 @@
             <p class="text1J">Acerca de</p> <br>
             <br>
             <br>
-            <br>
             <p class="text2J">Beach</p> <br><br><br>
             <p class="text2J">Beer</p> <br>
             <br>
