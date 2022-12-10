@@ -73,7 +73,7 @@
                                             
             }else {
               
-              $sql = "INSERT INTO usuarios (nombre, correo, cuenta, contra, bloqueado) VALUES('$nombre','$correo','$cuenta','$contra','0')";
+              $sql = "INSERT INTO usuarios (nombre, correo, cuenta, contra, bloqueado,intentos) VALUES('$nombre','$correo','$cuenta','$contra',0,0)";
 
               $conexion->query($sql);
 

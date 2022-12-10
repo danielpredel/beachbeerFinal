@@ -48,7 +48,7 @@
 <body>
     <div class="contenedorPrincipal">
         <h1>Editar Producto</h1><br>
-        <form class="row g-3" action="cambiosProductos.php" method="post" enctype="multipart/form-data" onsubmit="addNewLines();">
+        <form id="formProductos" class="row g-3" action="cambiosProductos.php" method="post" enctype="multipart/form-data" onsubmit="addNewLines();">
             <input type="hidden" name="idProducto" value="<?php echo $idProducto; ?>">
             <input type="hidden" name="nombreAnterior" value="<?php echo $imagen; ?>">
             <div class="col-md-6">

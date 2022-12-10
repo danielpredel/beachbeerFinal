@@ -24,8 +24,9 @@
             <p class="text2J">Beer</p> <br>
             <br>
             <br>
-            <br>
+            
             <p class="text3J">Beach Beer es la empresa líder en México en la elaboración, distribución y venta de cervezas y licores. Mantenemos un firme compromiso con el fomento de un mundo mejor a través del consumo responsable, iniciativas ambientales y apoyo a las comunidades en que vivimos y trabajamos. Nos distingue como empresa, cumplir nuestras responsabilidades con los consumidores, clientes, accionistas y empleados a través de la dirección, liderazgo e innovación.</p>
+            
         </div>
     </div>
     <div class="Contenedor22">

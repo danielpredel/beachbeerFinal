@@ -26,7 +26,7 @@ function pagoSeleccionado(){
         
     }else if(seleccionado == "Oxxo" || seleccionado == "7Eleven" ||  seleccionado == "Circle K"){
         //window.close();
-        window.open("pagoefectivo.php?opc="+seleccionado+"&pay=e");
+        window.open("pagoEfectivo.php?opc="+seleccionado+"&pay=e");
     
     }else if( seleccionado == "Santander" || seleccionado == "BBVA" || seleccionado == "Citibanamex"){
              

@@ -19,7 +19,7 @@
 <body>
     <div class="contenedorPrincipal">
         <h1>Agrega un Nuevo Producto</h1><br>
-        <form class="row g-3" action="altasProductos.php" method="post" enctype="multipart/form-data" onsubmit="addNewLines();">
+        <form id="formProductos" class="row g-3" action="altasProductos.php" method="post" enctype="multipart/form-data" onsubmit="addNewLines();">
             <div class="col-md-6">
                 <label for="nombre" class="form-label">Nombre</label>
                 <input type="text" class="form-control" id="nombre" name="nombre" required>

@@ -4,6 +4,12 @@
     margin-top: 50px;
     margin-bottom: 50px;
     min-height: 500px;
+    
+}
+
+#formProductos{
+    background-color: white;
+    padding: 10px;
 }
 
 /* Efecto hover en las imagenes de los productos */
