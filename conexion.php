@@ -1,8 +1,8 @@
 	<?php 
 	function conexion(){
 		return mysqli_connect('localhost',
-								'root',
-								'',
-								'beachbeer');
+								'id19989791_administrador',
+								'5cT[tJgM1ZGGye&w',
+								'id19989791_beachbeer');
 	}
  ?>

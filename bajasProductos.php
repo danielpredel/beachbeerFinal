@@ -3,9 +3,9 @@
         echo '<script> window.location.href="index.php"</script>';
     }
     $servidor='localhost';
-    $cuenta='root';
-    $password='';
-    $bd='beachbeer';
+    $cuenta='id19989791_administrador';
+    $password='5cT[tJgM1ZGGye&w';
+    $bd='id19989791_beachbeer';
 ?>
 
 <!DOCTYPE html>

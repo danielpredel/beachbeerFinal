@@ -1,9 +1,9 @@
 <?php
     session_start();
     $servidor='localhost';
-    $cuenta='root';
-    $password='';
-    $bd='beachbeer';
+    $cuenta='id19989791_administrador';
+    $password='5cT[tJgM1ZGGye&w';
+    $bd='id19989791_beachbeer';
     $conexion = new mysqli($servidor,$cuenta,$password,$bd);
     if ($conexion->connect_errno){
          die('Error en la conexion');

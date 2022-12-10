@@ -4,9 +4,9 @@
     if(isset($_SESSION['img_number']) && $_SESSION['img_number'] === $_POST["respuesta"]) {
         // Loggearse
         $serv = 'localhost';
-        $cuenta = 'root';
-        $contra = '';
-        $BaseD = 'beachbeer';
+		$cuenta='id19989791_administrador';
+		$contra='5cT[tJgM1ZGGye&w';
+		$BaseD='id19989791_beachbeer';
 
         // Conexion con la base de datos 
         $conexion = new mysqli($serv,$cuenta,$contra,$BaseD);
