@@ -88,7 +88,15 @@
             // No existe Usuario
         ?>
             <script>
-                swal("¡Error!","Nombre de Cuenta No Encontrada", "error");
+                swal({
+                          title: "¡Error!",
+                          text: "¡Nombre de Cuenta No Encontrada!",
+                          type: "error",
+                          timer: 3000,
+                          showConfirmButton: false
+                        }, function(){
+                              window.location.href = "recuperar.php";
+                    });
             </script>
             <?php   
         }
